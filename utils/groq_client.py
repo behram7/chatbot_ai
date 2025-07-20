@@ -1,6 +1,11 @@
 # utils/groq_client.py
 from groq import Groq
 import os
+from dotenv import load_dotenv
+
+
+
+load_dotenv()
 
 # Load from env (set GROQ_API_KEY in your environment or deployment secrets)
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
