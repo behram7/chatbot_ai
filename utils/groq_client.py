@@ -2,8 +2,10 @@
 from groq import Groq
 import os
 
-# Load from env (create .env and add GROQ_API_KEY)
-GROQ_API_KEY = "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"
+# Load from env (set GROQ_API_KEY in your environment or deployment secrets)
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+if not GROQ_API_KEY:
+    raise ValueError("GROQ_API_KEY environment variable not set. Please set it before running the app.")
 MODEL_NAME = "deepseek-r1-distill-llama-70b"
 
 client = Groq(api_key=GROQ_API_KEY)
